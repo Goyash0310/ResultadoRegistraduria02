@@ -1,0 +1,7 @@
+{
+  "url-backend": "127.0.0.1",
+  "port": 9999,
+
+  "data-db-conection":"mongodb+srv://Sharon10:1234@basededatosresultadoreg.39ca7dv.mongodb.net/bd-resultado-registraduria?retryWrites=true&w=majority",
+  "name-db": "bd-resultado-registraduria"
+}
