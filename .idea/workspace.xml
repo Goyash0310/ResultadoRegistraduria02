@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6d48cd8-8bf7-4469-bea5-e6c85c00a77f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Controladores/ControladorCandidato.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controladores/ControladorMesa.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controladores/ControladorPartido.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controladores/ControladorResultado.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modelos/AbstractModelo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modelos/Candidato.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modelos/Mesa.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modelos/Partido.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modelos/Resultado.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Repositorios/InterfaceRepositorio.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Repositorios/RepositorioCandidato.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Repositorios/RepositorioMesa.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Repositorios/RepositorioPartido.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Repositorios/RepositorioResultado.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
