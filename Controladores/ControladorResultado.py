@@ -14,38 +14,39 @@ class ControladorResultado():
     """
     Asignacion estudiante y materia a inscripción
     """
-    def create(self,infoInscripcion,id_estudiante,id_materia):
-        nuevaInscripcion=Inscripcion(infoInscripcion)
-        elEstudiante=Estudiante(self.repositorioEstudiantes.findById(id_estudiante))
-        laMateria=Materia(self.repositorioMaterias.findById(id_materia))
-        nuevaInscripcion.estudiante=elEstudiante
-        nuevaInscripcion.materia=laMateria
-        return self.repositorioInscripcion.save(nuevaInscripcion)
+    def create(self,infoResultado,id_mesa,id_candidato):
+        nuevoResultado=Resultado(infoResultado)
+        laMesa=Mesa(self.repositorioMesa.findById(id_mesa))
+        elCandidato=Candidato(self.repositorioCandidato.findById(id_candidato))
+        nuevoResultado.mesa=laMesa
+        nuevoResultado.candidato=elCandidato
+        return self.repositorioResultado.save(nuevoResultado)
     def show(self,id):
-        elInscripcion=Inscripcion(self.repositorioInscripcion.findById(id))
-        return elInscripcion.__dict__
+        elResultado=Resultado(self.repositorioResultado.findById(id))
+        return elResultado.__dict__
     """
-    Modificación de inscripción (estudiante y materia)
+    Modificación de Resultado (mesa y candidato)
     """
-    def update(self,id,infoInscripcion,id_estudiante,id_materia):
-        laInscripcion=Inscripcion(self.repositorioInscripcion.findById(id))
-        laInscripcion.año=infoInscripcion["año"]
-        laInscripcion.semestre = infoInscripcion["semestre"]
-        laInscripcion.notaFinal=infoInscripcion["nota_final"]
-        elEstudiante = Estudiante(self.repositorioEstudiantes.findById(id_estudiante))
-        laMateria = Materia(self.repositorioMaterias.findById(id_materia))
-        laInscripcion.estudiante = elEstudiante
-        laInscripcion.materia = laMateria
-        return self.repositorioInscripcion.save(laInscripcion)
+    def update(self,id,infoResultado,id_mesa,id_candidato):
+        elResultado=Resultado(self.repositorioResultado.findById(id))
+        elResultado.año=infoResultado["año"]
+        elResultado.semestre = infoResultado["semestre"]
+        elResultado.notaFinal=infoResultado["votos totales"]
+        laMesa = Mesa(self.repositorioMesa.findById(id_mesa))
+        elCandidato = Candidato(self.repositorioCandidato.findById(id_candidato))
+        elResultado.mesa = laMesa
+        elResultado.candidato = elCandidato
+        return self.repositorioResultado.save(elResultado)
     def delete(self, id):
-        return self.repositorioInscripcion.delete(id)
+        return self.repositorioResultado.delete(id)
 
-    "Obtener todos los inscritos en una materia"
-    def listarInscritosEnMateria(self,id_materia):
-        return self.repositorioInscripcion.getListadoInscritosEnMateria(id_materia)
+    "Obtener todos los candidatos inscritos en una mesa"
+    def listarCandidatosInscritosEnMesa(self,id_candidato):
+        return self.repositorioResultado.getListadoCandidatosInscritosEnMesa(id_candidato)
+
     "Obtener notas mas altas por curso"
     def notasMasAltasPorCurso(self):
-        return self.repositorioInscripcion.getMayorNotaPorCurso()
+        return self.repositorioResultado.getMayorNotaPorCurso()
     "Obtener promedio de notas en materia"
-    def promedioNotasEnMateria(self,id_materia):
-        return self.repositorioInscripcion.promedioNotasEnMateria(id_materia)
+    def promedioNotasEnCandidato(self,id_candidato):
+        return self.repositorioResultado.promedioNotasEnCandidato(id_candidato)
